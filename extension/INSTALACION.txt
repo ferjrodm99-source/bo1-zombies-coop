@@ -1,0 +1,22 @@
+BO1 Splitter 2.0.0 — directo por ventana
+
+Esta descarga es la extensión completa: el co-op original y el Splitter ya están unidos. No instales otra extensión ni copies archivos entre carpetas.
+
+DISEÑO
+Cada pestaña de juego filtra el Gamepad API nativo y entrega a BO1 solo el control que eliges. No necesita una ventana Hub al frente ni reenvía estados de mando entre pestañas. Las asignaciones viven en chrome.storage.session, aisladas por ID de extensión y por ID de pestaña, y se borran al cerrar la pestaña/sesión.
+
+INSTALACIÓN EN EDGE
+1. Abre edge://extensions y activa Modo de desarrollador.
+2. Desactiva y quita las copias anteriores de BO1 Co-op/Pad Splitter. No dejes dos extensiones que cambien navigator.getGamepads.
+3. Pulsa Cargar descomprimida y selecciona la carpeta que contiene manifest.json.
+4. Abre dos ventanas separadas de Edge, una pestaña https://vel.gg/bsz en cada ventana.
+5. En la ventana 1 elige «Control 1»; en la ventana 2 elige «Control 2».
+6. Haz clic dentro de cada página y presiona un botón físico del mando seleccionado para que Edge habilite ese mando en la página.
+7. Crea la sala en la ventana 1; en la ventana 2 únete usando el enlace de esa misma sala.
+8. «Ayuda / dividir pantalla» abre este panel; «Dividir pantalla» acomoda las dos ventanas si ya asignaste controles distintos.
+
+AISLAMIENTO
+- Cada ventana expone a la extensión del juego un único mando virtual en índice 0, construido desde el control físico elegido.
+- Una ventana sin selección no recibe mandos físicos.
+- La nueva carpeta y el nuevo ID de extensión tienen almacenamiento de sesión independiente. No se borran cookies o caché del sitio y no se cambia la IP.
+- Mantén una pestaña de juego por ventana para que el estado sea fácil de revisar.

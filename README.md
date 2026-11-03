@@ -1,29 +1,29 @@
-# BO1 Co-op — Same Browser, 1 Windows, 2 Controllers
+# BO1 Co-op — mismo navegador, 2 ventanas, 2 controles
 
-**Juega con un amigo en la misma PC usando el mismo navegador abierto en dos ventanas.** Una ventana es para ti y la otra para tu amigo: cada quien elige un control. Una ventana hospeda la partida y la otra se une con el enlace.
+**Mi modificación une el co-op original y el Splitter en una sola extensión lista para cargar.** En la misma PC y navegador, abre dos ventanas: cada jugador asigna su propio control, una ventana hospeda y la otra se une con el enlace de invitación.
 
-## Empieza por mi modificación
+## Descarga mi versión unificada
 
-[**Descargar mi modificación para dos ventanas (ZIP)**](https://github.com/ferjrodm99-source/bo1-zombies-coop/archive/refs/heads/same-pc-two-controllers-two-windows.zip) · [Ver el adaptador Splitter](extension-splitter/)
+[**Descargar BO1 Splitter 2.0.0 (extensión completa en ZIP)**](https://github.com/ferjrodm99-source/bo1-zombies-coop/raw/refs/heads/same-pc-two-controllers-two-windows/downloads/bo1-splitter-v2.0.0.zip) · [Ver la carpeta completa de la extensión](extension/)
 
-Esta modificación de **ferjrodm99-source** agrega la selección de Control 1 y Control 2 por ventana al co-op original. Es la versión que debes usar para jugar con dos controles en una sola PC; el paquete oficial sin el adaptador no incluye esa asignación.
+El ZIP contiene una sola extensión completa. **No hay que combinar carpetas ni instalar otra extensión Splitter.** La captura muestra las dos ventanas con Control 1 y Control 2 asignados. Reportaste que esta versión funcionó en Edge; Chrome no se verificó por separado.
 
-La combinación que reportaste como funcional es **BO1 Zombies Co-op 2.2.2 + adaptador Splitter 2.0.0**. La foto muestra una ventana con Control 1 y la otra con Control 2. Se probó en Edge; Chrome no se verificó por separado.
+### Instalar en Edge
 
-### Cómo instalar la modificación
+1. Descarga el ZIP anterior y extráelo en una carpeta fija.
+2. Abre `edge://extensions` y activa **Modo de desarrollador**.
+3. Pulsa **Cargar descomprimida** y selecciona la carpeta extraída que contiene `manifest.json`.
+4. Abre `https://vel.gg/bsz` en dos ventanas separadas del mismo navegador.
+5. En una ventana elige **Control 1**; en la otra, **Control 2**. Pulsa un botón físico de cada mando para que Edge lo detecte.
+6. Hospeda la partida en una ventana y únete desde la otra con el enlace de invitación.
 
-1. Descarga el ZIP de **mi modificación** desde el enlace anterior y descomprímelo.
-2. Dentro, abre `extension-splitter/` y copia sus archivos sobre la carpeta `extension/` del mismo ZIP.
-3. Acepta reemplazar `manifest.json`, pero conserva el `coop.js` y los iconos de `extension/`. Esos archivos originales son de AllanLotta.
-4. Carga la carpeta `extension/` combinada en `edge://extensions` o `chrome://extensions` con el modo desarrollador activado.
-5. Abre dos ventanas del mismo navegador en la misma PC. En una elige Control 1; en la otra, Control 2. Hospeda en una ventana y únete desde la otra.
+La carpeta `extension/` de este repositorio también contiene la versión completa lista para cargar. No copies ni combines archivos.
 
-No cargues `extension-splitter/` por sí sola: es el parche modificado y necesita los archivos originales que vienen en `extension/`.
+## Qué aporta la modificación
 
-## Qué aporta cada proyecto
-
-- **Co-op original de AllanLotta:** salas online, invitaciones, lobby, Kino der Toten y otros mapas, compatibilidad con mandos, modo divertido del anfitrión y relay.
-- **Mi modificación Splitter:** un control asignado por ventana, selector visible en el juego y panel para revisar y acomodar ambas ventanas.
+- Asigna un control físico distinto a cada ventana y expone ese mando al juego como el único mando de esa ventana.
+- Incluye el co-op original, el selector por ventana y la ayuda para organizar las ventanas en pantalla dividida.
+- Mantiene el co-op online de vel.gg. No convierte el juego en pantalla dividida local ni cambia la IP, las cookies o la caché.
 
 ![Dos ventanas del mismo navegador con Control 1 y Control 2](docs/images/two-windows-two-controllers.png)
 
@@ -31,7 +31,7 @@ Oculté los códigos privados de sala antes de publicar la captura. El co-op sig
 
 ## Créditos
 
-El co-op base, `coop.js` y los iconos son de [AllanLotta y colaboradores](https://github.com/AllanLotta/bo1-zombies-coop). Mi rama contiene el adaptador Splitter y sus instrucciones; no es una publicación oficial del proyecto original. Para descargar solo la extensión oficial, visita su [release 2.2.2](https://github.com/AllanLotta/bo1-zombies-coop/releases/tag/v2.2.2).
+El co-op base, `coop.js` y los iconos originales son de [AllanLotta y colaboradores](https://github.com/AllanLotta/bo1-zombies-coop). Esta rama comunitaria añade el Splitter y los empaqueta juntos para instalarse como una sola extensión; no es una publicación oficial del proyecto original. Para conocer el proyecto original, visita su [repositorio](https://github.com/AllanLotta/bo1-zombies-coop) y su [release 2.2.2](https://github.com/AllanLotta/bo1-zombies-coop/releases/tag/v2.2.2).
 
 ---<div align="center">
 
