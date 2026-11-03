@@ -1,4 +1,4 @@
-# BO1 Co-op — Same Browser, 2 Windows, 2 Controllers
+# BO1 Co-op — Same Browser, 1 Windows, 2 Controllers
 
 **Juega con un amigo en la misma PC usando el mismo navegador abierto en dos ventanas.** Una ventana es para ti y la otra para tu amigo: cada quien elige un control. Una ventana hospeda la partida y la otra se une con el enlace.
 
