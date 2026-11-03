@@ -1,42 +1,30 @@
-# BO1 Co-op — Same PC, 2 Controllers, 2 Edge/Chrome Windows
+# BO1 Co-op — Same Browser, 2 Windows, 2 Controllers
 
-Community adapter for [AllanLotta's BO1 Zombies Co-op](https://github.com/AllanLotta/bo1-zombies-coop). The original co-op and its creator keep their credit. The adapter patch is in [`extension-splitter/`](extension-splitter/); it deliberately excludes the original `coop.js` and icons. Get those from the [official v2.2.2 release](https://github.com/AllanLotta/bo1-zombies-coop/releases/tag/v2.2.2).
+**Juega con un amigo en la misma PC usando el mismo navegador abierto en dos ventanas.** Una ventana es para ti y la otra para tu amigo; cada quien elige su propio control. Una ventana hospeda la partida y la otra se une con el enlace de invitación.
 
-## What the original co-op provides
+Esta es la última combinación que usamos: **BO1 Zombies Co-op 2.2.2 + adaptador Splitter 2.0.0**. El usuario reportó que le funcionó muy bien en Edge. La captura muestra Control 1 en la ventana izquierda y Control 2 en la derecha. Chrome también es Chromium, pero no se probó por separado en esta sesión.
 
-- Online rooms for up to four players with an invite link and a shared lobby.
-- Kino der Toten and the project's other supported maps.
-- Player status and ping, coordinated joining, and shared pause features.
-- PlayStation/Xbox controller support and host fun-mode options.
-- An optional Cloudflare relay for your group.
+## Qué incluye
 
-See the original README and [official guide](https://allanlotta.github.io/bo1-zombies-coop/) for full details and updates.
+- El co-op original de AllanLotta: salas online, invitaciones, lobby, Kino der Toten, otros mapas, mandos y modo divertido del anfitrión.
+- El adaptador Splitter: Control 1 para una ventana y Control 2 para la otra, con selector visible en cada página.
+- Un panel auxiliar para revisar las ventanas y acomodarlas lado a lado.
 
-## What this adapter adds
+El co-op original y su creador conservan sus créditos. La carpeta [`extension-splitter/`](extension-splitter/) contiene solamente el adaptador; **no incluye una segunda copia del `coop.js` ni de los iconos originales**. Descarga esos archivos desde la [publicación oficial 2.2.2](https://github.com/AllanLotta/bo1-zombies-coop/releases/tag/v2.2.2) y sigue [`extension-splitter/INSTALACION.txt`](extension-splitter/INSTALACION.txt).
 
-- Select **Control 1** in one window and **Control 2** in the other.
-- Each game tab exposes only its selected physical controller to the co-op script as virtual controller index 0.
-- The selector stays on the game page; you do not need to keep the helper hub focused.
-- The helper panel lists game windows and can arrange the two windows side by side.
-- The assignment is kept per tab for the current browser session; it does not separate or clear site cookies, cache, or IP.
+### Evidencia
 
-### Test photo
+![Dos ventanas del mismo navegador con Control 1 y Control 2](docs/images/two-windows-two-controllers.png)
 
-This user-provided screenshot shows Kino running in two windows with Control 1 selected on the left and Control 2 on the right. I hid the room codes from both address bars before publishing it.
+Oculté los códigos privados de sala de las barras de direcciones antes de subir la imagen.
 
-![Two Edge windows with separate controller selections](docs/images/two-windows-two-controllers.png)
+## Importante
 
-The user reports this build worked in their setup. The screenshot documents the two windows and assignments; it is not a claim that this works in every browser or controller configuration.
+Son dos ventanas del mismo navegador en una PC; el co-op sigue siendo **online** a través del relay original. No es pantalla dividida local dentro de una sola ventana ni simula una segunda computadora. El adaptador no borra ni separa caché, cookies o IP.
 
-## Install the adapter patch
+## Créditos
 
-Follow [`extension-splitter/INSTALACION.txt`](extension-splitter/INSTALACION.txt). Download the official extension first, then merge these patch files into it while keeping AllanLotta's `coop.js` and icons unchanged. Do not load `extension-splitter/` by itself.
-
-This uses two browser windows on one PC for online co-op. It does not turn BO1 into local split-screen or emulate a second PC. Both players still use the original co-op relay.
-
-## Credit
-
-The original co-op, base gameplay integration, `coop.js`, and icons are by AllanLotta and contributors. This is a fork and a separate experimental adapter; it is not an official release and is not endorsed by the upstream project. The original project's terms and release page govern its files.
+La extensión co-op base y sus archivos originales son de [AllanLotta y colaboradores](https://github.com/AllanLotta/bo1-zombies-coop). Este fork agrega un adaptador comunitario de mandos por ventana; no es una versión oficial.
 
 ---
 <div align="center">
@@ -375,4 +363,5 @@ cartão avisa. O seu próprio relay também é grátis, leva uns 5 minutos e a c
 
 Os seus links de convite já levam o relay junto: os amigos só clicam em **Usar este relay** no cartão deles.
 Pelo terminal: veja os comandos na seção em inglês, acima.
+
 

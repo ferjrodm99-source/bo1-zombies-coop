@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "BO1 Co-op · Same PC · 2 Controllers · 2 Windows",
-  "short_name": "BO1 Same PC 2P",
+  "name": "BO1 Co-op · Same Browser · 2 Controllers · 2 Windows",
+  "short_name": "BO1 Same Browser 2P",
   "version": "2.0.0",
-  "description": "Play online co-op on one PC: assign one controller to each of two Edge/Chrome windows.",
+  "description": "On one PC and one browser, play online co-op in two windows with one controller assigned to each.",
   "homepage_url": "https://allanlotta.github.io/bo1-zombies-coop/",
   "icons": {
     "16": "icons/icon16.png",
