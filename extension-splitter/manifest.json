@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "BO1 Co-op · Same PC · 2 Controllers · 2 Windows",
+  "short_name": "BO1 Same PC 2P",
+  "version": "2.0.0",
+  "description": "Play online co-op on one PC: assign one controller to each of two Edge/Chrome windows.",
+  "homepage_url": "https://allanlotta.github.io/bo1-zombies-coop/",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://vel.gg/bsz*"
+  ],
+  "background": {
+    "service_worker": "worker.js"
+  },
+  "action": {
+    "default_title": "Open controller help"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://vel.gg/bsz*"
+      ],
+      "js": [
+        "main-world.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://vel.gg/bsz*"
+      ],
+      "js": [
+        "coop.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://vel.gg/bsz*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "world": "ISOLATED",
+      "all_frames": false
+    }
+  ]
+}

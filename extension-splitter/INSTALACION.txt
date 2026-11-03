@@ -1,0 +1,16 @@
+BO1 CO-OP — SAME PC, 2 CONTROLLERS, 2 EDGE/CHROME WINDOWS
+
+This folder is an adapter patch, not a complete extension. It intentionally does not include the original co-op file or its icons.
+
+1. Download the official BO1 Zombies Co-op package from AllanLotta's release page: https://github.com/AllanLotta/bo1-zombies-coop/releases/tag/v2.2.2
+2. Unzip it to a working folder. Keep the official coop.js and icons unchanged.
+3. Copy the files in this folder into that official extension folder. Allow manifest.json to be replaced; this adapter manifest still expects the official coop.js and icons to remain beside it.
+4. In Edge or Chrome, open edge://extensions or chrome://extensions, enable Developer mode, and use Load unpacked to select the merged official folder.
+5. Open two separate browser windows at https://vel.gg/bsz. Select Control 1 in one window and Control 2 in the other.
+6. Host in one window and join that room in the second. Keep one game tab per window for clear assignments.
+
+The screenshot in the repository shows both windows and selected controls. The user reports the build worked in their setup. Edge is the shown browser; Chrome has not been independently tested here.
+
+This is online co-op displayed in two windows, not local split-screen in one game instance and not a simulated second computer. It does not change the site's IP, cookies, or cache. Co-op relay limits still apply.
+
+Credit: BO1 Zombies Co-op, coop.js, and original icons are by AllanLotta and contributors. Use the official project and release page for those files and its updates. This patch adds the per-window controller selector and helper panel.

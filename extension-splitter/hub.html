@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BO1 · Mandos por ventana</title>
+  <link rel="stylesheet" href="hub.css">
+  <script src="hub.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">BO1 CO-OP · DIRECTO</div>
+      <h1>Mandos por ventana</h1>
+      <p>Este panel no lee ni reenvía mandos. Cada pestaña filtra el mando nativo elegido en su propia ventana.</p>
+    </header>
+    <section class="panel">
+      <div class="section-title"><span>Ventanas del juego</span><span id="window-count" class="count">0</span></div>
+      <div id="windows" class="list empty">Abre una ventana de vel.gg/bsz.</div>
+      <div class="actions"><button id="arrange" class="secondary">Dividir pantalla</button></div>
+      <button id="refresh" class="secondary refresh">Actualizar ventanas</button>
+    </section>
+    <section class="panel info">
+      <strong>Asigna los mandos en las páginas:</strong>
+      <ol>
+        <li>Elige <b>Control 1</b> en la ventana del jugador 1.</li>
+        <li>Elige <b>Control 2</b> en la ventana del jugador 2.</li>
+        <li>Presiona un botón del mando elegido en cada página.</li>
+      </ol>
+      <p>La elección es privada por pestaña y solo dura esta sesión de Edge. No hace falta mantener este panel al frente.</p>
+    </section>
+    <footer id="notice">Desactiva las copias anteriores de BO1/Pad Splitter antes de jugar.</footer>
+  </main>
+</body>
+</html>
