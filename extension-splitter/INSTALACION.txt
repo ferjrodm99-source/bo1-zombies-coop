@@ -1,17 +1,19 @@
-BO1 CO-OP — MISMO NAVEGADOR, 2 VENTANAS, 2 CONTROLES
+MI MODIFICACIÓN: BO1 CO-OP — MISMO NAVEGADOR, 2 VENTANAS, 2 CONTROLES
 
-Última combinación usada: co-op oficial 2.2.2 + adaptador Splitter 2.0.0.
+Versión que el usuario reportó funcional: co-op oficial 2.2.2 + adaptador Splitter 2.0.0.
 
-1. Descarga el paquete oficial 2.2.2 de AllanLotta: https://github.com/AllanLotta/bo1-zombies-coop/releases/tag/v2.2.2
-2. Descomprímelo en una carpeta de trabajo. Conserva intactos el coop.js y los iconos originales.
-3. Copia los archivos de esta carpeta del adaptador dentro de la carpeta oficial. Acepta reemplazar manifest.json. El nuevo manifiesto seguirá usando el coop.js y los iconos originales que ya están allí.
-4. En Edge abre edge://extensions; en Chrome abre chrome://extensions. Activa Modo de desarrollador y elige Cargar descomprimida. Selecciona la carpeta oficial ya combinada.
-5. Abre DOS ventanas del MISMO navegador en la misma PC y visita https://vel.gg/bsz en cada una. Usa una pestaña del juego por ventana.
-6. En tu ventana elige Control 1; en la ventana de tu amigo elige Control 2. Pulsa un botón físico en cada página para activar el mando.
-7. Hospeda la partida en una ventana y únete desde la otra usando el enlace de invitación.
+1. Descarga el ZIP de la rama modificada: https://github.com/ferjrodm99-source/bo1-zombies-coop/archive/refs/heads/same-pc-two-controllers-two-windows.zip
+2. Descomprímelo. La carpeta extension/ contiene los archivos originales del co-op; extension-splitter/ contiene la modificación.
+3. Copia los archivos de extension-splitter/ dentro de extension/. Acepta reemplazar manifest.json, pero conserva coop.js e icons/ de extension/.
+4. En Edge abre edge://extensions; en Chrome abre chrome://extensions. Activa Modo de desarrollador y elige Cargar descomprimida. Selecciona la carpeta extension/ ya combinada.
+5. Abre dos ventanas del MISMO navegador en la misma PC y visita https://vel.gg/bsz en ambas. Usa una pestaña del juego por ventana.
+6. Elige Control 1 en una ventana y Control 2 en la otra. Pulsa un botón del mando seleccionado en cada página.
+7. Hospeda en una ventana y únete a esa partida desde la otra con el enlace de invitación.
 
-La captura del README muestra la selección de cada control en una ventana distinta. El usuario informa que la combinación funcionó bien en Edge; Chrome no se comprobó por separado aquí.
+La carpeta extension-splitter/ no es instalable por sí sola; necesita el coop.js y los iconos originales de extension/.
 
-Esto ejecuta co-op online en dos ventanas. No crea pantalla dividida local dentro de una sola instancia, no simula otra PC y no cambia IP, cookies ni caché. Siguen aplicando las condiciones y límites del relay original.
+El usuario reporta que esta combinación funcionó bien en Edge. La captura muestra las asignaciones de las dos ventanas; Chrome no se probó por separado.
 
-CRÉDITOS: BO1 Zombies Co-op, coop.js e iconos originales pertenecen a AllanLotta y colaboradores. Este adaptador solo agrega la asignación de controles por ventana y el panel auxiliar. Consulta el proyecto oficial para instrucciones y actualizaciones.
+Sigue siendo co-op online en dos ventanas, no pantalla dividida local ni simulación de otra PC. No altera IP, cookies ni caché. Continúan aplicando los límites del relay original.
+
+CRÉDITOS: BO1 Zombies Co-op, coop.js e iconos originales son de AllanLotta y colaboradores. Esta rama agrega el adaptador comunitario para mandar un control a cada ventana.
