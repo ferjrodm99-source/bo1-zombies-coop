@@ -2,6 +2,7 @@ const PAGE_MATCH = "https://vel.gg/bsz*";
 const ASSIGNMENTS_KEY = "directWindowPadAssignmentsV1";
 
 let assignments = Object.create(null);
+let uniqueAssignmentsReady = null;
 const initialized = chrome.storage.session.get(ASSIGNMENTS_KEY).then((saved) => {
   const value = saved[ASSIGNMENTS_KEY];
   if (value && typeof value === "object" && !Array.isArray(value)) {
@@ -62,15 +63,20 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 
 async function registerTab(tabId) {
-  await initialized;
+  await ensureUniqueAssignments();
   if (!Object.hasOwn(assignments, tabId)) assignments[tabId] = null;
   const connected = await sendAssignment(tabId);
   return { ok: true, pad: assignments[tabId], connected };
 }
 
 async function selectPad(tabId, pad) {
-  await initialized;
+  await ensureUniqueAssignments();
   if (pad !== 0 && pad !== 1) return { ok: false, error: "Elige Control 1 o Control 2." };
+  const gameTabs = await chrome.tabs.query({ url: PAGE_MATCH });
+  const duplicate = gameTabs.find((tab) => tab.id !== tabId && assignments[tab.id] === pad);
+  if (duplicate) {
+    return { ok: false, error: `Control ${pad + 1} ya está asignado a otra ventana. Elige el otro control.` };
+  }
   assignments[tabId] = pad;
   await saveAssignments();
   const connected = await sendAssignment(tabId);
@@ -90,7 +96,7 @@ async function sendAssignment(tabId) {
 }
 
 async function getStatus() {
-  await initialized;
+  await ensureUniqueAssignments();
   const tabs = await chrome.tabs.query({ url: PAGE_MATCH });
   const status = await Promise.all(tabs.map(async (tab) => ({
     id: tab.id,
@@ -109,7 +115,7 @@ async function arrangeWindows(screen) {
     return { ok: false, error: "No pude leer el tamaño de la pantalla." };
   }
 
-  await initialized;
+  await ensureUniqueAssignments();
   const tabs = await chrome.tabs.query({ url: PAGE_MATCH });
   const playerOne = tabs.filter((tab) => assignments[tab.id] === 0);
   const playerTwo = tabs.filter((tab) => assignments[tab.id] === 1);
@@ -130,6 +136,39 @@ async function arrangeWindows(screen) {
 
 async function saveAssignments() {
   await chrome.storage.session.set({ [ASSIGNMENTS_KEY]: assignments });
+}
+
+async function ensureUniqueAssignments() {
+  if (!uniqueAssignmentsReady) {
+    uniqueAssignmentsReady = (async () => {
+      await initialized;
+      const tabs = (await chrome.tabs.query({ url: PAGE_MATCH })).sort((a, b) => a.id - b.id);
+      const liveTabs = new Set(tabs.map((tab) => tab.id));
+      const usedPads = new Set();
+      let changed = false;
+      for (const tab of tabs) {
+        const pad = assignments[tab.id];
+        if (pad !== 0 && pad !== 1) continue;
+        if (usedPads.has(pad)) {
+          assignments[tab.id] = null;
+          changed = true;
+        } else {
+          usedPads.add(pad);
+        }
+      }
+      for (const key of Object.keys(assignments)) {
+        if (!liveTabs.has(Number(key))) {
+          delete assignments[key];
+          changed = true;
+        }
+      }
+      if (changed) await saveAssignments();
+    })().catch((error) => {
+      uniqueAssignmentsReady = null;
+      throw error;
+    });
+  }
+  await uniqueAssignmentsReady;
 }
 
 function matchesGame(url) {

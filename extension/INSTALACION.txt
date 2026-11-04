@@ -1,4 +1,4 @@
-BO1 Splitter 2.0.2 — directo por ventana
+BO1 Splitter 2.0.3 — directo por ventana
 
 Esta descarga es la extensión completa: el co-op original y el Splitter ya están unidos. No instales otra extensión ni copies archivos entre carpetas.
 
@@ -10,7 +10,7 @@ INSTALACIÓN EN EDGE
 2. Desactiva y quita las copias anteriores de BO1 Co-op/Pad Splitter. No dejes dos extensiones que cambien navigator.getGamepads.
 3. Pulsa Cargar descomprimida y selecciona la carpeta que contiene manifest.json.
 4. Abre dos ventanas separadas de Edge, una pestaña https://vel.gg/bsz en cada ventana.
-5. En la ventana 1 elige «Control 1»; en la ventana 2 elige «Control 2».
+5. En la ventana 1 elige «Control 1»; en la ventana 2 elige «Control 2». La extensión impide asignar el mismo control a las dos ventanas.
 6. Haz clic dentro de cada página y presiona un botón físico del mando seleccionado para que Edge habilite ese mando en la página.
 7. Revisa el estado debajo del selector: debe decir «Control detectado». Al pulsar un botón, aparecerá su número. Si dice «mando no detectado», enfoca esa ventana y pulsa el control asignado.
 8. El mando asignado sigue activo al pasar el foco a la otra ventana. Si minimizas la ventana o cambias de pestaña, vuelve a enfocarla y pulsa el mando otra vez.
