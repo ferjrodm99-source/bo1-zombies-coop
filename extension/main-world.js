@@ -24,12 +24,41 @@ Object.defineProperty(navigator, "getGamepads", {
 
 window.addEventListener("message", (event) => {
   if (event.source !== window || event.origin !== location.origin || event.data?.source !== "bo1-direct-pad") return;
+  if (event.data.type === "probe") {
+    publishPadStatus();
+    return;
+  }
   if (event.data.type !== "assign") return;
   assignedPad = Number.isInteger(event.data.player) ? event.data.player : null;
   try {
     window.__bo1Coop?.gamepad?.update?.(performance.now());
   } catch {}
+  publishPadStatus();
 });
+
+window.addEventListener("gamepadconnected", publishPadStatus);
+window.addEventListener("gamepaddisconnected", publishPadStatus);
+setInterval(publishPadStatus, 180);
+
+function publishPadStatus() {
+  if (assignedPad !== 0 && assignedPad !== 1) return;
+  let physical = null;
+  let error = false;
+  try {
+    physical = nativeGetGamepads()?.[assignedPad] ?? null;
+  } catch {
+    error = true;
+  }
+  const buttons = Array.from(physical?.buttons ?? [], (button) => Boolean(button.pressed || button.value > 0.5));
+  window.postMessage({
+    source: "bo1-direct-pad",
+    type: "pad-status",
+    player: assignedPad,
+    connected: Boolean(physical?.connected),
+    error,
+    buttons,
+  }, location.origin);
+}
 
 function emptyGamepads() {
   const result = [];

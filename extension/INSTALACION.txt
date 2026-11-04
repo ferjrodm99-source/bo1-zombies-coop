@@ -1,4 +1,4 @@
-BO1 Splitter 2.0.0 — directo por ventana
+BO1 Splitter 2.0.1 — directo por ventana
 
 Esta descarga es la extensión completa: el co-op original y el Splitter ya están unidos. No instales otra extensión ni copies archivos entre carpetas.
 
@@ -12,8 +12,9 @@ INSTALACIÓN EN EDGE
 4. Abre dos ventanas separadas de Edge, una pestaña https://vel.gg/bsz en cada ventana.
 5. En la ventana 1 elige «Control 1»; en la ventana 2 elige «Control 2».
 6. Haz clic dentro de cada página y presiona un botón físico del mando seleccionado para que Edge habilite ese mando en la página.
-7. Crea la sala en la ventana 1; en la ventana 2 únete usando el enlace de esa misma sala.
-8. «Ayuda / dividir pantalla» abre este panel; «Dividir pantalla» acomoda las dos ventanas si ya asignaste controles distintos.
+7. Revisa el estado debajo del selector: debe decir «Control detectado». Al pulsar un botón, aparecerá su número. Si dice «mando no detectado», enfoca esa ventana y pulsa el control asignado.
+8. Crea la sala en la ventana 1; en la ventana 2 únete usando el enlace de esa misma sala.
+9. «Ayuda / dividir pantalla» abre este panel; «Dividir pantalla» acomoda las dos ventanas si ya asignaste controles distintos.
 
 AISLAMIENTO
 - Cada ventana expone a la extensión del juego un único mando virtual en índice 0, construido desde el control físico elegido.

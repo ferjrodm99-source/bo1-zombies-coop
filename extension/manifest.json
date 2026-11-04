@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "name": "BO1 Splitter · Directo por ventana",
   "short_name": "BO1 Splitter Directo",
-  "version": "2.0.0",
-  "description": "Filtra el mando nativo por pestaña: cada ventana BO1 elige Control 1 o Control 2 sin relay ni Hub en foco.",
+  "version": "2.0.1",
+  "description": "Asigna un control por ventana BO1 e indica en pantalla si Edge detecta los botones.",
   "homepage_url": "https://allanlotta.github.io/bo1-zombies-coop/",
   "icons": {
     "16": "icons/icon16.png",

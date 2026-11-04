@@ -1,13 +1,37 @@
 const PANEL_ID = "__bo1_direct_pad_picker_v1";
 let assignedPad = null;
 let statusText = "Elige un control para esta ventana.";
+let latestPadStatus = "";
 
 showPicker();
 registerWithWorker();
 
+window.addEventListener("message", (event) => {
+  if (event.source !== window || event.origin !== location.origin || event.data?.source !== "bo1-direct-pad" || event.data.type !== "pad-status") return;
+  if (event.data.player !== assignedPad || assignedPad == null) return;
+  const playerLabel = `Control ${assignedPad + 1}`;
+  let nextStatus;
+  if (event.data.error) {
+    nextStatus = `${playerLabel} asignado · Edge bloqueó la lectura del mando.`;
+  } else if (!event.data.connected) {
+    nextStatus = `${playerLabel} asignado · mando no detectado; pulsa un botón aquí.`;
+  } else {
+    const pressed = event.data.buttons.findIndex(Boolean);
+    nextStatus = pressed >= 0
+      ? `${playerLabel} detectado · Botón ${pressed + 1} pulsado.`
+      : `${playerLabel} detectado · mueve un stick o pulsa un botón.`;
+  }
+  if (nextStatus !== latestPadStatus) {
+    latestPadStatus = nextStatus;
+    statusText = nextStatus;
+    showPicker();
+  }
+});
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message?.type === "assign") {
     assignedPad = Number.isInteger(message.player) ? message.player : null;
+    latestPadStatus = "";
     statusText = assignedPad == null
       ? "Elige un control para esta ventana."
       : `Control ${assignedPad + 1} seleccionado · pulsa un botón de ese mando.`;
@@ -94,6 +118,7 @@ async function choosePad(pad) {
       return;
     }
     assignedPad = response.pad;
+    latestPadStatus = "";
     statusText = `Control ${pad + 1} seleccionado · pulsa un botón de ese mando.`;
     showPicker();
   } catch {
