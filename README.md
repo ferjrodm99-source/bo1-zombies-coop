@@ -4,9 +4,9 @@
 
 ## Descarga mi versión unificada
 
-[**Descargar BO1 Splitter 2.0.1 (extensión completa en ZIP)**](https://github.com/ferjrodm99-source/bo1-zombies-coop/raw/refs/heads/same-pc-two-controllers-two-windows/downloads/bo1-splitter-v2.0.1.zip) · [Ver la carpeta completa de la extensión](extension/)
+[**Descargar BO1 Splitter 2.0.2 (extensión completa en ZIP)**](https://github.com/ferjrodm99-source/bo1-zombies-coop/raw/refs/heads/same-pc-two-controllers-two-windows/downloads/bo1-splitter-v2.0.2.zip) · [Ver la carpeta completa de la extensión](extension/)
 
-El ZIP contiene una sola extensión completa y muestra si Edge detecta el mando y qué botón se pulsa. **No hay que combinar carpetas ni instalar otra extensión Splitter.** La captura muestra las dos ventanas con Control 1 y Control 2 asignados. Reportaste que esta versión funcionó en Edge; Chrome no se verificó por separado.
+El ZIP contiene una sola extensión completa. Muestra si Edge detecta el mando y qué botón se pulsa, y mantiene la lectura del control al cambiar de ventana. **No hay que combinar carpetas ni instalar otra extensión Splitter.** La captura muestra las dos ventanas con Control 1 y Control 2 asignados. Reportaste que esta versión funcionó en Edge; Chrome no se verificó por separado.
 
 ### Instalar en Edge
 

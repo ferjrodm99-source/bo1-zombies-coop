@@ -80,7 +80,12 @@ export class Gamepad {
       requestAnimationFrame(frame);
     };
     requestAnimationFrame(frame);
-    addEventListener("blur", () => this.releaseAll());
+    if (!window.__bo1DirectPadFilterActive) {
+      addEventListener("blur", () => this.releaseAll());
+    }
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") this.releaseAll();
+    });
   }
 
   findPad() {

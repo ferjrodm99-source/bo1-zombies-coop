@@ -3,6 +3,7 @@ const nativeGetGamepads = typeof navigator.getGamepads === "function"
   : () => [];
 
 let assignedPad = null;
+window.__bo1DirectPadFilterActive = true;
 
 Object.defineProperty(navigator, "getGamepads", {
   configurable: true,

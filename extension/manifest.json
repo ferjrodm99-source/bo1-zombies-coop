@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "name": "BO1 Splitter · Directo por ventana",
   "short_name": "BO1 Splitter Directo",
-  "version": "2.0.1",
-  "description": "Asigna un control por ventana BO1 e indica en pantalla si Edge detecta los botones.",
+  "version": "2.0.2",
+  "description": "Asigna un control por ventana BO1, muestra botones detectados y mantiene el mando al cambiar de ventana.",
   "homepage_url": "https://allanlotta.github.io/bo1-zombies-coop/",
   "icons": {
     "16": "icons/icon16.png",
